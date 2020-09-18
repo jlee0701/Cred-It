@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainWindow">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="600.0" text="Credit Card Database" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <VBox layoutX="58.0" layoutY="35.0" prefHeight="365.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0">
+         <children>
+            <Accordion>
+              <panes>
+                <TitledPane animated="false" prefHeight="355.0" prefWidth="600.0" text="Make A Selection">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox layoutX="124.0" layoutY="-100.0" prefHeight="201.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <HBox prefHeight="201.0" prefWidth="598.0">
+                                       <children>
+                                          <Accordion>
+                                            <panes>
+                                              <TitledPane animated="false" text="MemberSSN">
+                                                <content>
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <ScrollPane layoutX="-64.0" layoutY="-73.0" prefHeight="104.0" prefWidth="191.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                              <content>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="418.0" prefWidth="155.0">
+                                                                     <children>
+                                                                        <VBox layoutX="14.0" layoutY="-59.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                           <children>
+                                                                              <CheckBox fx:id="MemberSSNCheckBox" mnemonicParsing="false" text="SSN" />
+                                                                              <TextField fx:id="MemberSSNTextField" />
+                                                                              <CheckBox fx:id="MemberEmailCheckBox" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Member Email" />
+                                                                              <TextField fx:id="MemberEmailTextField" />
+                                                                              <CheckBox fx:id="MemberAnnualIncomeCheckBox" layoutX="10.0" layoutY="27.0" mnemonicParsing="false" text="Annual Income" />
+                                                                              <TextField fx:id="MemberAnnualIncomeTextField" />
+                                                                           </children>
+                                                                        </VBox>
+                                                                     </children>
+                                                                  </AnchorPane>
+                                                              </content>
+                                                            </ScrollPane>
+                                                         </children>
+                                                      </AnchorPane>
+                                                </content>
+                                              </TitledPane>
+                                                
+                                            </panes>
+                                          </Accordion>
+                                          <Accordion>
+                                            <panes>
+                                            <TitledPane animated="false" text="Which Card To Use?">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <ScrollPane layoutX="-64.0" layoutY="-73.0" prefHeight="104.0" prefWidth="191.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <content>
+                                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="157.0">
+                                                                     <children>
+                                                                        <VBox layoutX="14.0" layoutY="-59.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                           <children>
+	                                                                           <RadioButton fx:id="whichCard" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Search This">
+																				   <toggleGroup>
+																				       <ToggleGroup fx:id="group"/>
+																				   </toggleGroup>
+																				</RadioButton>
+                                                                              <Label fx:id="RewardCategoryLabel" mnemonicParsing="false" text="Reward Category" />
+                                                                              <ComboBox fx:id="RewardCategoryCBOX" >
+	                                                                              <items>
+																			        <FXCollections fx:factory="observableArrayList">
+																			            <String fx:value="TRAVEL"/>
+																			            <String fx:value="RESTAURANT"/>
+																			            <String fx:value="GROCERY"/>
+																			            <String fx:value="GAS"/>
+																			            <String fx:value="ONLINE SHOPPING"/>
+																			            <String fx:value="EVERYTHING ELSE"/>
+																			            <String fx:value="SIGN UP BONUS"/>
+																			            <String fx:value="OTHER BONUS"/>
+																			        </FXCollections>
+																			   	  </items>
+																			</ComboBox>
+                                                                              <Label fx:id="RewardTypeLabel" layoutX="10.0" layoutY="27.0" mnemonicParsing="false" text="Reward Type" />
+                                                                              <ComboBox fx:id="RewardTypeCBOX" >
+	                                                                              <items>
+																			        <FXCollections fx:factory="observableArrayList">
+																			       		<String fx:value=""/>
+																			            <String fx:value="cash back"/>
+																			            <String fx:value="points"/>
+																			            <String fx:value="miles"/>
+																			        </FXCollections>
+																			   	  </items>
+																			</ComboBox>
+                                                                            
+                                                                           </children>
+                                                                        </VBox>
+                                                                     </children>
+                                                                  </AnchorPane>
+                                                               </content>
+                                                            </ScrollPane>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                   </TitledPane>
+                                                <TitledPane animated="false" text="Delete A Owned Card">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <ScrollPane layoutX="-64.0" layoutY="-73.0" prefHeight="104.0" prefWidth="191.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <content>
+                                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="157.0">
+                                                                     <children>
+                                                                        <VBox layoutX="14.0" layoutY="-59.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                           <children>
+	                                                                           <RadioButton fx:id="deleteCard" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Delete A Card">
+																						   <toggleGroup>
+																						       <ToggleGroup fx:id="group"/>
+																						   </toggleGroup>
+																						</RadioButton>
+                                                                              <Label fx:id="deleteCardNumber" mnemonicParsing="false" text="Card Number" />
+                                                                              <TextField fx:id="deleteCardNumberTF" />
+                                                                           </children>
+                                                                        </VBox>
+                                                                     </children>
+                                                                  </AnchorPane>
+                                                               </content>
+                                                            </ScrollPane>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </TitledPane>
+                                                <TitledPane animated="false" text="Add a Credit Card">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <ScrollPane layoutX="-64.0" layoutY="-73.0" prefHeight="104.0" prefWidth="191.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <content>
+                                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="407.0" prefWidth="157.0">
+                                                                     <children>
+                                                                        <VBox layoutX="14.0" layoutY="-59.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                           <children>
+	                                                                           <RadioButton fx:id="addCard" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Add Card">
+																					   <toggleGroup>
+																					       <ToggleGroup fx:id="group"/>
+																					   </toggleGroup>
+																					</RadioButton>
+	                                                                              <Label fx:id="NewCardSelect" mnemonicParsing="false" text="Select a Card Name" />
+	                                                                              <ComboBox fx:id="cardSelection" >
+		                                                                              <items>
+																				        <FXCollections fx:factory="observableArrayList">
+																				            <String fx:value="Chase Freedom Unlimited"/>
+																				            <String fx:value="American Express Gold"/>
+																				            <String fx:value="American Express Green"/>
+																				            <String fx:value="Wells Fargo Platinum"/>
+																				            <String fx:value="Wells Fargo Cash Wise"/>
+																				            <String fx:value="Wells Fargo Rewards"/>
+																				            <String fx:value="Chase Sapphire Preferred"/>
+																				            <String fx:value="Chase Sapphire Reserve"/>
+																				            <String fx:value="Cash Rewards"/>
+																				            <String fx:value="Sonesta"/>
+																				            <String fx:value="Barclaycard Financing Visa"/>
+																				            <String fx:value="RCI"/>
+																				        </FXCollections>
+																				   	  </items>
+																				</ComboBox>
+                                                                              <Label fx:id="AddCardNumber" layoutX="10.0" layoutY="52.0" mnemonicParsing="false" text="Card Number" />
+                                                                              <TextField fx:id="AddCardNumberTF" layoutX="10.0" layoutY="69.0" />
+                                                                              <Label fx:id="AddCurrentBal" layoutX="10.0" layoutY="94.0" mnemonicParsing="false" text="Current Balance" />
+                                                                              <TextField fx:id="CurrentBalTF" layoutX="10.0" layoutY="111.0" />
+                                                                              <Label fx:id="MaxBalance" layoutX="10.0" layoutY="136.0" mnemonicParsing="false" text="Max Balance" />
+                                                                              <TextField fx:id="MaxBalanceTF" layoutX="10.0" layoutY="153.0" />
+                                                                              <Label fx:id="AddCCV" layoutX="10.0" layoutY="220.0" mnemonicParsing="false" text="CCV" />
+                                                                              <TextField fx:id="CCVTF" layoutX="10.0" layoutY="237.0" />
+                                                                              <Label fx:id="Expiration" layoutX="10.0" layoutY="262.0" mnemonicParsing="false" text="Expiration Date" />
+                                                                              <TextField fx:id="ExpirationTF" layoutX="10.0" layoutY="279.0" />
+                                                                              
+                                                                           </children>
+                                                                        </VBox>
+                                                                     </children>
+                                                                  </AnchorPane>
+                                                               </content>
+                                                            </ScrollPane>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </TitledPane>
+                                                <TitledPane animated="false" text="Owned Cards">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <ScrollPane layoutX="-64.0" layoutY="-73.0" prefHeight="104.0" prefWidth="191.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <content>
+                                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="424.0" prefWidth="157.0">
+                                                                     <children>
+                                                                        <VBox layoutX="14.0" layoutY="-59.0" prefHeight="424.0" prefWidth="157.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                           <children>
+	                                                                           <RadioButton fx:id="ownedCards" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="See Owned Cards">
+																						   <toggleGroup>
+																						       <ToggleGroup fx:id="group"/>
+																						   </toggleGroup>
+																						</RadioButton>
+                                                                        
+                                                                           </children>
+                                                                        </VBox>
+                                                                     </children>
+                                                                  </AnchorPane>
+                                                               </content>
+                                                            </ScrollPane>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </TitledPane>
+                                            </panes>
+                                          </Accordion>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </TitledPane>
+                  <TitledPane animated="false" text="Results">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="135.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="25.0" prefWidth="579.0" text="Results" />
+                                    <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="528.0" prefWidth="562.0">
+                                             <children>
+                                                <TextArea fx:id="ResultsTextArea" editable="false" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             </children>
+                                          </AnchorPane>
+                                      </content>
+                                    </ScrollPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </TitledPane>
+              </panes>
+            </Accordion>
+            <ButtonBar prefHeight="40.0" prefWidth="200.0">
+              <buttons>
+                <Button fx:id="SearchButton" mnemonicParsing="false" onAction="#search" text="Search" />
+                  <Button fx:id="InsertButton" mnemonicParsing="false" onAction="#insert" text="Insert" />
+                  <Button fx:id="UpdateButton" mnemonicParsing="false" onAction="#update" text="Update" />
+                  <Button fx:id="DeleteButton" mnemonicParsing="false" onAction="#delete" text="Delete" />
+              </buttons>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </ButtonBar>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
