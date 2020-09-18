@@ -1,7 +1,5 @@
 Credit Card Database:
 
-- video link: https://youtu.be/qOOJkh14QMY
-
 This program provides graphic user interface that gives four options to: search, insert, update, and delete an item. 
 The main functionalities are
 - Make A Selection
